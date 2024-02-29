@@ -130,7 +130,7 @@
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                                 <div class="form-group">
                                                     <label for="region" class="col-form-label">书籍</label>
-                                                    <select class="select2 form-control" id="region" name="book">
+                                                    <select class="select2 form-control" id="region" name="bid">
                                                         <option th:value="${book.getId()}" th:each="book : ${book_list}"
                                                                 th:text="${book.getTitle()}"></option>
                                                     </select>
@@ -139,7 +139,7 @@
                                             <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                                                 <div class="form-group">
                                                     <label for="city" class="col-form-label">学生</label>
-                                                    <select class="select2 form-control" id="city" name="student">
+                                                    <select class="select2 form-control" id="city" name="sid">
                                                         <option th:value="${student.getId()}"
                                                                 th:each="student : ${student_list}"
                                                                 th:text="${student.getName()}"></option>

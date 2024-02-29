@@ -15,9 +15,10 @@ public interface BookMapper {
             @Result(column = "bid", property = "bid"),
             @Result(column = "time", property = "time"),
             @Result(column = "name", property = "studentName"),
-            @Result(column = "tittle", property = "bookName")
+            @Result(column = "title", property = "bookName")
 
     })
+    //Java15新特性：文本块
     @Select("""
             select * from borrow left join student on sid= student.id
             left join book on bid = book.id
@@ -25,7 +26,7 @@ public interface BookMapper {
     List<Borrow> getBorrowList();
 
     //NOW()返回当前时间的Date对象
-    @Insert("insert into borrow values(#{sid},#{bid},NOW()")
+    @Insert("insert into borrow values(null,#{sid},#{bid},NOW())")
     void addBorrow(Borrow borrow);
 
     @Delete("delete from borrow where id = #{id}")
@@ -37,7 +38,7 @@ public interface BookMapper {
     @Delete("delete from book where id=#{id}")
     void deleteBook(int id);
 
-    @Insert("insert into book values(#{tittle},#{desc},#{price})")
+    @Insert("insert into book values(null,#{title},#{desc},#{price})")
     void addBook(Book book);
 
 
