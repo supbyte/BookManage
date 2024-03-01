@@ -30,13 +30,13 @@ public interface BookMapper {
     void addBorrow(Borrow borrow);
 
     @Delete("delete from borrow where id = #{id}")
-    void deleteBorrow(int id);
+    void deleteBorrow(Integer id);
 
     @Select("select * from book")
     List<Book> getBookList();
 
     @Delete("delete from book where id=#{id}")
-    void deleteBook(int id);
+    void deleteBook(Integer id);
 
     @Insert("insert into book values(null,#{title},#{desc},#{price})")
     void addBook(Book book);

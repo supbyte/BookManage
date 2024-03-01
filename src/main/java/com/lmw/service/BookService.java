@@ -16,5 +16,9 @@ public interface BookService {
 
     List<Book> getActiveBookList();
 
+    void addBook(Book book);
+
+    void deleteBook(int id);
+
     void returnBook(int id);
 }
